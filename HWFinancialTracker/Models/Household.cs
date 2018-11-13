@@ -29,7 +29,7 @@ namespace HWFinancialTracker.Models
         public string UserId { get; set; }
         public int AccountId { get; set; }
 
-        //Each household can have several categories (which they added to their household and made up
+        //Each household can have several categories (which they added to their household and made up)
         public virtual ICollection<Category> Categories { get; set; }
         //Each househould can have several budgts (travel budget, food budget, etc.)
         public virtual ICollection<Budget> Budgets { get; set; }
