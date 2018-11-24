@@ -16,7 +16,7 @@ namespace HWFinancialTracker.Models
         public int Id { get; set; }
         //Name of the account (e.g. bank Account?) or billing account (PSEG?)
         public string Name { get; set; }
-        //how much is remaining in the account
+        //how much is remaining in the account before reconciliation?
         public int Balance { get; set; }
         //How much is remaining after balance is reconciled (e.g. when balancing checkbook, accounting for pending transactions)
         public int ReconciledBalance { get; set; }
