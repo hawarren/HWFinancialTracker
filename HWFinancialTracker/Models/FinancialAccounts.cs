@@ -14,20 +14,26 @@ namespace HWFinancialTracker.Models
         }
         //primary key of the financial account
         public int Id { get; set; }
+
         //Name of the account (e.g. bank Account?) or billing account (PSEG?)
         public string Name { get; set; }
+
         //how much is remaining in the account before reconciliation?
         public int Balance { get; set; }
+
         //How much is remaining after balance is reconciled (e.g. when balancing checkbook, accounting for pending transactions)
         public int ReconciledBalance { get; set; }
 
+
         //foreign key for Household
         public int HouseholdId { get; set; }
+
         //foreign key for Transactions
         public int TransactionId { get; set; }
 
         //navigation property for Transactions (each account can/will have many transactions
         public virtual ICollection<Transaction> Transactions { get; set; }
+
         //navigation property for the Household (each Transaction belongs to a single Household)
         public virtual Household Household { get; set; }
 

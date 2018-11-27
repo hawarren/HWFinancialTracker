@@ -7,10 +7,12 @@ namespace HWFinancialTracker.Models
 {
     public class Budget
     {
-        //primary key of the my budget
+        //primary key of the users budget
         public  int Id { get; set; }
+
         //Identifiable name of that budget e.g. "Travel budget"
         public int Name { get; set; }
+
         //Primary key of the household to which this budget belongs. It goes hand in hand with the navigation property
         public int HouseholdId { get; set; }
 
