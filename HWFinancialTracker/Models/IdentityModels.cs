@@ -29,5 +29,17 @@ namespace HWFinancialTracker.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<HWFinancialTracker.Models.Household> Households { get; set; }
+
+        public System.Data.Entity.DbSet<HWFinancialTracker.Models.FinancialAccounts> FinancialAccounts { get; set; }
+
+        public System.Data.Entity.DbSet<HWFinancialTracker.Models.Budget> Budgets { get; set; }
+
+        public System.Data.Entity.DbSet<HWFinancialTracker.Models.Transaction> Transactions { get; set; }
+
+        public System.Data.Entity.DbSet<HWFinancialTracker.Models.Category> Categories { get; set; }
+
+        //public System.Data.Entity.DbSet<HWFinancialTracker.Models.ApplicationUser> ApplicationUsers { get; set; }
     }
 }

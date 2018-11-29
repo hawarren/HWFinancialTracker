@@ -31,13 +31,14 @@ namespace HWFinancialTracker.Models
         public string HHID { get; set; }
 
         // these are foreign keys to connect to : Household Id (the head of household), Category, Budget (every household has budgets), UseriD, and Financial Accounts
-        public int CategoryId { get; set; }
+        public int? CategoryId { get; set; }
 
-        public int BudgetId { get; set; }
+        public int? BudgetId { get; set; }
 
+        //string can be null, no need to make nullable like I do with int
         public string UserId { get; set; }
 
-        public int AccountId { get; set; }
+        public int? AccountId { get; set; }
 
         // Each household can have several categories (which they added to their household and made up)
         public virtual ICollection<Category> Categories { get; set; }
