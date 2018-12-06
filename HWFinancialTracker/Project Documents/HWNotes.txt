@@ -24,3 +24,17 @@ TicketNotification
 TicketPriority
 TicketStatus
 TicketType
+
+
+
+**********************************************
+
+Action Plan 12/5/
+-Hashim clones UiBranch, works on UiBranch
+-When Hashim completes a view, he does a pull request to the UiBranch
+-Hashim uses whatever frontend tools/frameworks/libraries that he wants (as long as it's bootstrap)
+-Hanif provides feedback and direction on the UI under advisement from UX Chief
+-Plain html files will go under HTMLViews
+-TODO: Add bootstrap 4 to the UserInterface branch of the project (for Hashim to clone)
+-Hashim.xyx
+-We'll use cards on everything via bootstrap 4 (no theme necessary)
