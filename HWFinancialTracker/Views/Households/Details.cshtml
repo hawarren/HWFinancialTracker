@@ -62,7 +62,8 @@
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-    @Html.ActionLink("Create a new Account for your household", "Create", "FinancialAccounts", new {id = Model.Id}  )
-    @Html.ActionLink("fAccount", "Create", )
+    @Html.ActionLink("Back to List", "Index") |
+    @Html.ActionLink("Create a new Account for your household", "Create", "FinancialAccounts", new {id = 1 }, null )
+    @Html.ActionLink("Add an account for this household", "Create", "FinancialAccounts", new { id = Model.Id }, null)
+
 </p>

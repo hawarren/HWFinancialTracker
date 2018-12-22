@@ -40,10 +40,11 @@ namespace HWFinancialTracker.Controllers
         public ActionResult Create( int id)
 
         {
-
+            FinancialAccounts newAccount = new FinancialAccounts();
+            newAccount.HouseholdId = id;
             //ViewBag.HouseholdId = new SelectList(db.Households, "Id", "Name");
             ViewBag.HouseholdId = id; //passes in the Household Id because you're creating based on the household it came from
-            return View();
+            return View(newAccount);
         }
 
         // POST: FinancialAccounts/Create
