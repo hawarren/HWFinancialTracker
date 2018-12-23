@@ -43,7 +43,9 @@ namespace HWFinancialTracker.Controllers
             FinancialAccounts newAccount = new FinancialAccounts();
             newAccount.HouseholdId = id;
             //ViewBag.HouseholdId = new SelectList(db.Households, "Id", "Name");
-            ViewBag.HouseholdId = id; //passes in the Household Id because you're creating based on the household it came from
+            ViewBag.HouseholdId = new SelectList(db.Households.Where(h => h.Id == id), "Id", "Name");
+
+            //ViewBag.HouseholdId = id; //passes in the Household Id because you're creating based on the household it came from
             return View(newAccount);
         }
 
