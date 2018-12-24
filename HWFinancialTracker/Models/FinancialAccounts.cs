@@ -5,6 +5,8 @@ using System.Web;
 
 namespace HWFinancialTracker.Models
 {
+    using System.ComponentModel.DataAnnotations;
+
     public class FinancialAccounts
     {
         // wraps up all the transactions on this account into a nice collection (for iterating over, adding them up, and other manipulations)
@@ -19,6 +21,7 @@ namespace HWFinancialTracker.Models
         public int Id { get; set; }
 
         // Name of the account (e.g. bank Account?) or billing account (PSEG?)
+        [Display(Name="Name of Account")]
         public string Name { get; set; }
 
         // how much is remaining in the account before reconciliation?

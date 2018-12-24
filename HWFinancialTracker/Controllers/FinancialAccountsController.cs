@@ -15,9 +15,10 @@ namespace HWFinancialTracker.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: FinancialAccounts
-        public ActionResult Index()
+        public ActionResult Index(int? id)
         {
-            var financialAccounts = db.FinancialAccounts.Include(f => f.Household);
+            var financialAccounts = db.FinancialAccounts.Include(f => f.Household).Where(g => g.HouseholdId == id);
+            ViewBag.HouseholdId = id;
             return View(financialAccounts.ToList());
         }
 
@@ -37,7 +38,7 @@ namespace HWFinancialTracker.Controllers
         }
 
         // GET: FinancialAccounts/Create
-        public ActionResult Create( int id)
+        public ActionResult Create(int id)
 
         {
             FinancialAccounts newAccount = new FinancialAccounts();
@@ -60,7 +61,7 @@ namespace HWFinancialTracker.Controllers
             {
                 db.FinancialAccounts.Add(financialAccounts);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", new {id = financialAccounts.HouseholdId});
             }
 
             ViewBag.HouseholdId = new SelectList(db.Households, "Id", "Name", financialAccounts.HouseholdId);

@@ -23,11 +23,12 @@ namespace HWFinancialTracker.Models
         public int Id { get; set; }
 
         // Name for the household, e.g. "Warren family"
+        [Display(Name = "Household Name")]
         public string Name { get; set; }
 
 
         // this is the Head of Household ID, not a primary key
-        [Display(Name = "HeadOfHousehold")]
+        [Display(Name = "User who is Head Of Household")]
         public string HHID { get; set; }
 
         // these are foreign keys to connect to : Household Id (the head of household), Category, Budget (every household has budgets), UseriD, and Financial Accounts
@@ -43,7 +44,7 @@ namespace HWFinancialTracker.Models
         // Each household can have several categories (which they added to their household and made up)
         public virtual ICollection<Category> Categories { get; set; }
 
-        // Each household can have several budgts (travel budget, food budget, etc.)
+        // Each household can have several budgets (travel budget, food budget, etc.)
         public virtual ICollection<Budget> Budgets { get; set; }
 
         // Each household can have several users be a part of it
