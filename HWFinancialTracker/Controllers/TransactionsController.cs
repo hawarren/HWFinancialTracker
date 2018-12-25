@@ -20,6 +20,8 @@ namespace HWFinancialTracker.Controllers
             var transactions = db.Transactions.Where(f => f.AccountId == id).Include(t => t.Category).Include(t => t.EnteredBy);
             // ensure the AccountID is passed in to the view
             ViewBag.AccountId = id;
+            //get the name of the Account and pass it in to the view
+            ViewBag.AccountName = this.db.FinancialAccounts.Where(g => g.Id == id).Select(h => h.Name);
             return View(transactions.ToList());
         }
 
@@ -43,6 +45,8 @@ namespace HWFinancialTracker.Controllers
         {
             ViewBag.CategoryId = new SelectList(db.Categories, "Id", "Name");
             ViewBag.EnteredById = new SelectList(db.Users, "Id", "Email");
+            //get the name of the Account and pass it in to the view
+            ViewBag.AccountName = new SelectList(db.FinancialAccounts.Where(g => g.Id == id), "Id", "Name");
             return View();
         }
 
