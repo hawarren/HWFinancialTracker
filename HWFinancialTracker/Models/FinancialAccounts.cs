@@ -35,7 +35,7 @@ namespace HWFinancialTracker.Models
         public int HouseholdId { get; set; }
 
         // foreign key for Transactions
-        public int TransactionId { get; set; }
+       // public int TransactionId { get; set; }
 
         // navigation property for Transactions (each account can/will have many transactions
         public virtual ICollection<Transaction> Transactions { get; set; }

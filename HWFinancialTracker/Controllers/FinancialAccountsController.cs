@@ -55,7 +55,7 @@ namespace HWFinancialTracker.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,Balance,ReconciledBalance,HouseholdId,TransactionId")] FinancialAccounts financialAccounts)
+        public ActionResult Create([Bind(Include = "Id,Name,Balance,ReconciledBalance,HouseholdId")] FinancialAccounts financialAccounts)
         {
             if (ModelState.IsValid)
             {
@@ -89,7 +89,7 @@ namespace HWFinancialTracker.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,Balance,ReconciledBalance,HouseholdId,TransactionId")] FinancialAccounts financialAccounts)
+        public ActionResult Edit([Bind(Include = "Id,Name,Balance,ReconciledBalance,HouseholdId")] FinancialAccounts financialAccounts)
         {
             if (ModelState.IsValid)
             {

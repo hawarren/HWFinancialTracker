@@ -23,9 +23,7 @@
         <th>
             @Html.DisplayNameFor(model => model.ReconciledBalance)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TransactionId)
-        </th>
+
         <th></th>
     </tr>
 
@@ -43,9 +41,7 @@
         <td>
             @Html.DisplayFor(modelItem => item.ReconciledBalance)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TransactionId)
-        </td>
+
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
             @Html.ActionLink("Details", "Details", new { id=item.Id }) |
