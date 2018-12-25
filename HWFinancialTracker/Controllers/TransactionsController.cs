@@ -18,6 +18,8 @@ namespace HWFinancialTracker.Controllers
         public ActionResult Index(int? id)
         {
             var transactions = db.Transactions.Where(f => f.AccountId == id).Include(t => t.Category).Include(t => t.EnteredBy);
+            // ensure the AccountID is passed in to the view
+            ViewBag.AccountId = id;
             return View(transactions.ToList());
         }
 
@@ -37,7 +39,7 @@ namespace HWFinancialTracker.Controllers
         }
 
         // GET: Transactions/Create
-        public ActionResult Create()
+        public ActionResult Create(int? id)
         {
             ViewBag.CategoryId = new SelectList(db.Categories, "Id", "Name");
             ViewBag.EnteredById = new SelectList(db.Users, "Id", "Email");
