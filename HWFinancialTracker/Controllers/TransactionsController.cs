@@ -15,9 +15,9 @@ namespace HWFinancialTracker.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Transactions
-        public ActionResult Index()
+        public ActionResult Index(int? id)
         {
-            var transactions = db.Transactions.Include(t => t.Category).Include(t => t.EnteredBy);
+            var transactions = db.Transactions.Where(f => f.AccountId == id).Include(t => t.Category).Include(t => t.EnteredBy);
             return View(transactions.ToList());
         }
 

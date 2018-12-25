@@ -49,4 +49,5 @@
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("See the Transactions for this Account", "Index", "Transactions", new {id = Model.Id }, null)
 </p>
